@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function Hero() {
   return (
     <section className="bg-gray-50 py-24">
@@ -31,8 +33,10 @@ export default function Hero() {
 
         </div>
 
-        <img
+        <Image
           src="/hero.png"
+          width={500}
+          height={500}
           alt="students learning"
           className="rounded-xl"
         />

@@ -15,8 +15,8 @@ export default function Navbar() {
         {/* Logo */}
         <Link href="/">
           <h1 className="text-2xl font-bold text-blue-600">
-            TechCatalyst
-          </h1>
+            Catalyst Classroom
+           </h1>
         </Link>
 
         {/* Desktop Menu */}

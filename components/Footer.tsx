@@ -7,7 +7,7 @@ export default function Footer() {
 
         <div>
           <h2 className="text-xl font-bold text-white">
-            TechCatalyst
+            Catalyst Classroom
           </h2>
 
           <p className="mt-4">
@@ -33,18 +33,18 @@ export default function Footer() {
           </h3>
 
           <p className="mt-4">
-            contact@techcatalyst.com
+            catalystclassroom1@gmail.com
           </p>
 
           <p>
-            +91 XXXXX XXXXX
+            +91 62839 XXXXX
           </p>
         </div>
 
       </div>
 
       <p className="text-center text-gray-500 mt-10">
-        © 2026 TechCatalyst
+        © 2026 Catalyst Classroom
       </p>
 
     </footer>
