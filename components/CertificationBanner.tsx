@@ -1,4 +1,5 @@
 import { ArrowRight } from "lucide-react"
+import Image from "next/image"
 
 const certifications = [
   {
@@ -52,7 +53,9 @@ export default function CertificationBanner() {
               key={i}
               className="bg-[#2B2F45] rounded-2xl overflow-hidden hover:scale-105 transition"
             >
-              <img
+              <Image
+                width={500}
+                height={500}
                 src={cert.img}
                 alt={cert.title}
                 className="h-32 w-full object-cover"
