@@ -31,11 +31,11 @@ export default function Navbar() {
 
         {/* MENU */}
         <div className="hidden md:flex items-center gap-6 text-sm text-gray-700">
-          <Link href="/" className="text-green-500 font-medium">Home</Link>
-          <Link href="/about">About us</Link>
-          <Link href="/courses">Courses</Link>
-          <Link href="/contact">Contact us</Link>
-          <Link href="/faq">FAQs</Link>
+          <Link href="/" className="hover:text-green-500 font-medium">Home</Link>
+          <Link href="/about" className="hover:text-green-500 font-medium">About us</Link>
+          <Link href="/courses" className="hover:text-green-500 font-medium">Courses</Link>
+          <Link href="/contact" className="hover:text-green-500 font-medium">Contact us</Link>
+          <Link href="/faq" className="hover:text-green-500 font-medium">FAQs</Link>
         </div>
 
         {/* RIGHT */}
