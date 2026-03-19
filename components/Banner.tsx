@@ -1,3 +1,5 @@
+"use client"
+
 import {
   Sparkles,
   Trophy,
@@ -8,103 +10,75 @@ import Image from "next/image"
 
 export default function Banner() {
   return (
-    <section className="px-6 py-16">
-      <div className="max-w-7xl mx-auto bg-[#1E2235] rounded-3xl p-10 md:p-16 grid md:grid-cols-2 gap-12 items-center">
+    <section className="px-6 py-20 bg-linear-to-b from-green-50 to-white">
 
-        {/* LEFT SIDE */}
-        <div className="text-white">
+      <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
 
-          <h1 className="text-4xl md:text-5xl font-bold leading-tight">
+        {/* LEFT */}
+        <div>
+
+          <h1 className="text-4xl md:text-5xl font-bold leading-tight text-gray-900">
             Upgrade your career in the <br />
-            <span className="text-blue-400">AI world</span>
+            <span className="text-green-500">AI world</span>
           </h1>
 
-          <p className="mt-6 text-gray-300 text-lg">
-            Future-proof your skills with Catalyst Classroom. 
-            Get access to real-world courses in Web Development,
-            AI/ML and Data Science from industry experts.
+          <p className="mt-6 text-gray-500 text-lg max-w-md">
+            Future-proof your skills with Catalyst Classroom.
+            Learn Web Dev, AI/ML, and Data Science with real-world projects.
           </p>
 
-          {/* Features */}
-          <div className="grid grid-cols-2 gap-6 mt-8 text-gray-200">
+          {/* FEATURES */}
+          <div className="grid grid-cols-2 gap-5 mt-8 text-gray-700">
 
-            <div className="flex items-center gap-3">
-              <Sparkles size={20}/>
-              <span>Learn Web, AI and more</span>
-            </div>
-
-            <div className="flex items-center gap-3">
-              <Trophy size={20}/>
-              <span>Get certification</span>
-            </div>
-
-            <div className="flex items-center gap-3">
-              <Bot size={20}/>
-              <span>Practice with AI assistance</span>
-            </div>
-
-            <div className="flex items-center gap-3">
-              <Lightbulb size={20}/>
-              <span>Advance your career</span>
-            </div>
+            {[
+              { icon: Sparkles, text: "Learn Web & AI" },
+              { icon: Trophy, text: "Get certification" },
+              { icon: Bot, text: "AI-powered practice" },
+              { icon: Lightbulb, text: "Career growth" }
+            ].map((item, i) => {
+              const Icon = item.icon
+              return (
+                <div key={i} className="flex items-center gap-3">
+                  <div className="bg-green-100 p-2 rounded-lg">
+                    <Icon size={18} className="text-green-600" />
+                  </div>
+                  <span className="text-sm font-medium">{item.text}</span>
+                </div>
+              )
+            })}
 
           </div>
 
           {/* CTA */}
-          <div className="mt-10">
-            <button className="bg-white text-black font-semibold px-6 py-3 rounded-lg hover:bg-gray-200 transition">
-              Learn more
+          <div className="mt-10 flex items-center gap-6">
+            <button className="bg-green-500 text-white px-6 py-3 rounded-xl hover:bg-green-600 transition shadow-md">
+              Get Started
             </button>
 
-            <p className="text-gray-400 mt-4">
+            <p className="text-gray-500 text-sm">
               Starting at ₹999/course
             </p>
           </div>
 
         </div>
 
-        {/* RIGHT SIDE IMAGE GRID */}
+        {/* RIGHT IMAGE GRID */}
         <div className="grid grid-cols-2 grid-rows-2 gap-4 h-105">
 
-          <div className="rounded-xl overflow-hidden bg-blue-400">
-            <Image
-              width={500}
-              height={500}
-              src="/hero1.png"
-              alt="tech learning"
-              className="w-full h-full object-cover"
-            />
-          </div>
-
-          <div className="rounded-xl overflow-hidden bg-gray-200">
-            <Image
-              width={500}
-              height={500}
-              src="/hero2.png"
-              alt="mentor"
-              className="w-full h-full object-cover"
-            />
-          </div>
-
-          <div className="rounded-xl overflow-hidden bg-purple-400">
-            <Image
-              width={500}
-              height={500}
-              src="/hero3.png"
-              alt="AI graphics"
-              className="w-full h-full object-cover"
-            />
-          </div>
-
-          <div className="rounded-xl overflow-hidden bg-gray-300">
-            <Image
-              width={500}
-              height={500}
-              src="/hero4.png"
-              alt="VR learning"
-              className="w-full h-full object-cover"
-            />
-          </div>
+          {[1,2,3,4].map((i) => (
+            <div
+              key={i}
+              className="rounded-2xl overflow-hidden shadow-md hover:scale-[1.02] transition"
+            >
+              <Image
+                width={500}
+                height={500}
+                src={`/hero${i}.png`}
+                alt="hero"
+                className="w-full h-full object-cover"
+              />
+            </div>
+          ))}
 
         </div>
 

@@ -1,56 +1,51 @@
 "use client"
 
-import { useState } from "react"
 import Link from "next/link"
+import { Search, ChevronDown } from "lucide-react"
 
 export default function Navbar() {
-
-  const [open,setOpen] = useState(false)
-
   return (
-    <nav className="w-full bg-white shadow-sm sticky top-0 z-50">
+    <nav className="w-full bg-white">
 
-      <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+      <div className="max-w-7xl mx-auto px-6 py-6 flex items-center justify-between">
 
-        {/* Logo */}
-        <Link href="/">
-          <h1 className="text-2xl font-bold text-blue-600">
-            Catalyst Classroom
-           </h1>
-        </Link>
-
-        {/* Desktop Menu */}
-        <div className="hidden md:flex gap-8 text-gray-700 font-medium">
-          <Link href="/">Home</Link>
-          <Link href="/courses">Courses</Link>
-          <Link href="/about">About</Link>
-          <Link href="/contact">Contact</Link>
+        {/* LOGO */}
+        <div className="flex items-center gap-2">
+          <div className="w-8 h-8 border-2 border-yellow-400 rounded-sm flex items-center justify-center font-bold text-yellow-500">
+            C
+          </div>
+          <span className="text-xs text-gray-400">atalyst Classroom</span>
         </div>
 
-        {/* CTA */}
-        <button className="hidden md:block bg-blue-600 text-white px-5 py-2 rounded-lg hover:bg-blue-700">
-          Enroll Now
-        </button>
+        {/* SEARCH */}
+        <div className="hidden md:flex items-center bg-gray-100 px-4 py-2 rounded-xl w-95">
+          <Search size={16} className="text-gray-500 mr-2" />
+          <input
+            placeholder="Want to learn?"
+            className="bg-transparent outline-none text-sm w-full"
+          />
+          <div className="flex items-center gap-1 text-green-500 text-sm font-medium cursor-pointer">
+            Explore <ChevronDown size={14} />
+          </div>
+        </div>
 
-        {/* Mobile Menu Button */}
-        <button
-          onClick={()=>setOpen(!open)}
-          className="md:hidden"
-        >
-          ☰
-        </button>
+        {/* MENU */}
+        <div className="hidden md:flex items-center gap-6 text-sm text-gray-700">
+          <Link href="/" className="text-green-500 font-medium">Home</Link>
+          <Link href="/about">About us</Link>
+          <Link href="/courses">Courses</Link>
+          <Link href="/contact">Contact us</Link>
+          <Link href="/faq">FAQs</Link>
+        </div>
+
+        {/* RIGHT */}
+        <div className="flex items-center gap-4">
+          <button className="bg-green-500 text-white px-4 py-2 rounded-lg text-sm hover:bg-green-600">
+            Enroll Now
+          </button>
+        </div>
 
       </div>
-
-      {open && (
-        <div className="md:hidden px-6 pb-4 flex flex-col gap-3">
-          <Link href="/">Home</Link>
-          <Link href="/courses">Courses</Link>
-          <Link href="/about">About</Link>
-          <Link href="/contact">Contact</Link>
-        </div>
-      )}
-
     </nav>
   )
 }
