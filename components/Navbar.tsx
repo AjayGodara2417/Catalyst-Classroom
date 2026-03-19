@@ -40,9 +40,11 @@ export default function Navbar() {
 
         {/* RIGHT */}
         <div className="flex items-center gap-4">
-          <button className="bg-green-500 text-white px-4 py-2 rounded-lg text-sm hover:bg-green-600">
-            Enroll Now
-          </button>
+            <Link href="/enroll">
+            <button className="bg-green-500 text-white px-4 py-2 rounded-lg text-sm hover:bg-green-600">
+              Enroll Now
+            </button>
+            </Link>
         </div>
 
       </div>
